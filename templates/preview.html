@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview Strip</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Your Photo Strip</h2>
+
+  <div id="preview-container">
+    <div id="slip-wrapper">
+      <img id="slip-preview" src="{{ image_url }}" alt="Preview of photo strip">
+    </div>
+    <div class="preview-controls">
+      <a href="{{ url_for('index') }}"><button>Reshoot</button></a>
+      <a href="{{ url_for('download', filename=filename) }}"><button>Download Strip</button></a>
+    </div>
+  </div>
+</body>
+</html>

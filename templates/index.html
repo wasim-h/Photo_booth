@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📸 Web Photo Booth</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📸 Web Photo Booth</h1>
+
+  <div class="booth-container">
+    <div class="cam-area">
+      <video id="video" autoplay playsinline></video>
+      <div class="overlay" id="countdown">3</div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="none">Normal</button>
+      <button class="filter-btn" data-filter="grayscale(100%)">Noir</button>
+      <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
+      <button class="filter-btn" data-filter="invert(100%)">Invert</button>
+      <button class="filter-btn" data-filter="contrast(200%)">Contrast</button>
+    </div>
+
+    <div class="controls">
+      <button id="snap-btn">Snap</button>
+    </div>
+
+    <div class="photo-strip">
+      <canvas id="canvas1" width="320" height="240"></canvas>
+      <canvas id="canvas2" width="320" height="240"></canvas>
+      <canvas id="canvas3" width="320" height="240"></canvas>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
